@@ -58,5 +58,6 @@ public class TraineeDBRepository implements TraineeRepository {
 	public Trainee findTrainee(Long id) {
 		return manager.find(Trainee.class, id);
 	}
+	
 
 }

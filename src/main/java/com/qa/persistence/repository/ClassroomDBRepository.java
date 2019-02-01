@@ -60,18 +60,4 @@ public class ClassroomDBRepository implements ClassroomRepository{
 		return manager.find(Classroom.class, id);
 	}
 
-	public String addTrainee(Long id, Long traineeID) {
-		Trainee trainee = manager.find(Trainee.class, traineeID);
-		Classroom classroom = findClassroom(id);
-		classroom.getTrainees().add(trainee);
-		return messageStart + id + "' has added trainee with id '" + traineeID + "'\"}";
-	}
-
-	public String removeTrainee(Long id, Long traineeID) {
-		Trainee trainee = manager.find(Trainee.class, traineeID);
-		Classroom classroom = findClassroom(id);
-		classroom.getTrainees().remove(trainee);
-		return messageStart + id + "' has removed trainee with id '" + traineeID + "'\"}";
-	}
-
 }
