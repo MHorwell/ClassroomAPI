@@ -11,13 +11,13 @@ public class Trainee {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	private String traineeName;
+	private String name;
 	
 	public Trainee() {
 	}
 	
-	public Trainee(String traineeName) {
-		this.traineeName = traineeName;
+	public Trainee(String name) {
+		this.name = name;
 	}
 
 	public long getId() {
@@ -29,11 +29,11 @@ public class Trainee {
 	}
 
 	public String getTraineeName() {
-		return this.traineeName;
+		return this.name;
 	}
 
-	public void getTraineeName(String traineeName) {
-		this.traineeName = traineeName;
+	public void getTraineeName(String name) {
+		this.name = name;
 	}
 
 }
