@@ -22,7 +22,7 @@ public class Classroom {
 	
 	public Classroom(String trainer, List<Trainee> traineeList) {
 		this.trainer = trainer;
-		this.traineeList = traineeList;
+		this.setTraineeList(traineeList);
 	}
 
 	public long getId() {
@@ -39,6 +39,14 @@ public class Classroom {
 
 	public void setTrainer(String trainer) {
 		this.trainer = trainer;
+	}
+
+	public List<Trainee> getTraineeList() {
+		return traineeList;
+	}
+
+	public void setTraineeList(List<Trainee> traineeList) {
+		this.traineeList = traineeList;
 	}
 
 }
