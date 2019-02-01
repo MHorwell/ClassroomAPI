@@ -11,48 +11,44 @@ import javax.ws.rs.Produces;
 
 import com.qa.business.service.ClassroomService;
 
+@Path("/classroom")
 public class ClassroomEndpoint {
 
-	@Path("/classroom")
-	public class AccountEndpoint {
-		
-		@Inject
-		private ClassroomService service;
+	@Inject
+	private ClassroomService service;
 
-		@Path("/getAll")
-		@GET
-		@Produces({ "application/json" })
-		public String getAllAccounts() {
-			return service.getAllClassrooms();
-		}
-		
-		@Path("/{id}")
-		@GET
-		@Produces({ "application/json" })
-		public String getClassroom(@PathParam("id") Long id) {
-			return service.getClassroom(id);
-		}
-
-		@Path("/create")
-		@POST
-		@Produces({ "application/json" })
-		public String addAccount(String classroom) {
-			return service.createClassroom(classroom);
-		}
-
-		@Path("/{id}")
-		@DELETE
-		@Produces({ "application/json" })
-		public String deleteAccount(@PathParam("id") Long id) {
-			return service.deleteClassroom(id);
-		}
-		
-		@Path("/{id}")
-		@PUT
-		@Produces({ "application/json" })
-		public String updateAccount(@PathParam("id") Long id, String classroom) {
-			return service.updateClassroom(id, classroom);
-		}
+	@Path("/getAll")
+	@GET
+	@Produces({ "application/json" })
+	public String getAllAccounts() {
+		return service.getAllClassrooms();
 	}
 
+	@Path("/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getClassroom(@PathParam("id") Long id) {
+		return service.getClassroom(id);
+	}
+
+	@Path("/create")
+	@POST
+	@Produces({ "application/json" })
+	public String createClassroom(String classroom) {
+		return service.createClassroom(classroom);
+	}
+
+	@Path("/{id}")
+	@DELETE
+	@Produces({ "application/json" })
+	public String deleteClassroom(@PathParam("id") Long id) {
+		return service.deleteClassroom(id);
+	}
+
+	@Path("/{id}")
+	@PUT
+	@Produces({ "application/json" })
+	public String updateClassroom(@PathParam("id") Long id, String classroom) {
+		return service.updateClassroom(id, classroom);
+	}
 }
