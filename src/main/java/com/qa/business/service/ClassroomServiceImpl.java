@@ -36,14 +36,4 @@ public class ClassroomServiceImpl implements ClassroomService {
 		return repo.updateClassroom(id, classroom);
 	}
 
-	@Transactional(REQUIRED)
-	public String addTrainee(Long id, Long traineeID) {
-		return repo.addTrainee(id, traineeID);
-	}
-
-	@Transactional(REQUIRED)
-	public String removeTrainee(Long id, Long traineeID) {
-		return repo.removeTrainee(id, traineeID);
-	}
-
 }

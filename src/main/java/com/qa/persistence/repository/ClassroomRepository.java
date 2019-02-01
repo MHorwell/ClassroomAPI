@@ -12,8 +12,4 @@ public interface ClassroomRepository {
 	
 	String updateClassroom(Long id, String classroom);
 	
-	String addTrainee(Long id, Long traineeID);
-	
-	String removeTrainee(Long id, Long traineeID);
-	
 }
