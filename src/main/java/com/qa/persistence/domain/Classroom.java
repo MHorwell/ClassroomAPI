@@ -1,6 +1,6 @@
 package com.qa.persistence.domain;
 
-import java.util.List;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,14 +15,14 @@ public class Classroom {
 	
 	private String trainer;
 	
-	private List<Trainee> traineeList;
+	private Collection<Trainee> trainees;
 	
 	public Classroom() {
 	}
 	
-	public Classroom(String trainer, List<Trainee> traineeList) {
+	public Classroom(String trainer, Collection<Trainee> trainees) {
 		this.trainer = trainer;
-		this.setTraineeList(traineeList);
+		this.setTrainees(trainees);
 	}
 
 	public long getId() {
@@ -41,12 +41,12 @@ public class Classroom {
 		this.trainer = trainer;
 	}
 
-	public List<Trainee> getTraineeList() {
-		return traineeList;
+	public Collection<Trainee> getTrainees() {
+		return trainees;
 	}
 
-	public void setTraineeList(List<Trainee> traineeList) {
-		this.traineeList = traineeList;
+	public void setTrainees(Collection<Trainee> trainees) {
+		this.trainees = trainees;
 	}
 
 }
