@@ -10,8 +10,6 @@ public interface TraineeRepository {
 	
 	String deleteTrainee(Long id);
 	
-	String updateTrainee(String trainee);
-	
-	
+	String updateTrainee(Long id, String trainee);
 
 }
