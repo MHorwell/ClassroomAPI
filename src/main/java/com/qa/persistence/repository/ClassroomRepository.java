@@ -10,7 +10,7 @@ public interface ClassroomRepository {
 	
 	String deleteClassroom(Long id);
 	
-	String updateClassroom(String classroom);
+	String updateClassroom(Long id, String classroom);
 	
 	String addTrainee(Long id, Long traineeID);
 	
