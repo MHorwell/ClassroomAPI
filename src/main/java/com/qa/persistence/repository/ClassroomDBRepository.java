@@ -11,6 +11,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.qa.persistence.domain.Classroom;
+import com.qa.persistence.domain.Trainee;
 import com.qa.util.JSONUtil;
 
 @Default
@@ -60,13 +61,17 @@ public class ClassroomDBRepository implements ClassroomRepository{
 	}
 
 	public String addTrainee(Long id, Long traineeID) {
-		// TODO Auto-generated method stub
-		return null;
+		Trainee trainee = manager.find(Trainee.class, traineeID);
+		Classroom classroom = findClassroom(id);
+		classroom.getTrainees().add(trainee);
+		return messageStart + id + "' has added trainee with id '" + traineeID + "'\"}";
 	}
 
 	public String removeTrainee(Long id, Long traineeID) {
-		// TODO Auto-generated method stub
-		return null;
+		Trainee trainee = manager.find(Trainee.class, traineeID);
+		Classroom classroom = findClassroom(id);
+		classroom.getTrainees().remove(trainee);
+		return messageStart + id + "' has removed trainee with id '" + traineeID + "'\"}";
 	}
 
 }
