@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Classroom {
@@ -15,6 +16,7 @@ public class Classroom {
 	
 	private String trainer;
 	
+	@OneToMany
 	private Collection<Trainee> trainees;
 	
 	public Classroom() {
