@@ -17,6 +17,8 @@ import com.qa.util.JSONUtil;
 @Transactional(SUPPORTS)
 public class ClassroomDBRepository implements ClassroomRepository{
 	
+	private String messageStart = "{\"message\": \"Classroom with id '";
+	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
 	
@@ -36,21 +38,21 @@ public class ClassroomDBRepository implements ClassroomRepository{
 	public String createClassroom(String classroom) {
 		Classroom newClassroom = util.getObjectForJSON(classroom, Classroom.class);
 		manager.persist(newClassroom);
-		return "{\"message\": \"Classroom with id '" + newClassroom.getId() + "' has been created\"}";
+		return messageStart + newClassroom.getId() + "' has been created\"}";
 		
 	}
 
 	@Transactional(REQUIRED)
 	public String deleteClassroom(Long id) {
 		manager.remove(findClassroom(id));
-		return "{\"message\": \"Classroom with id '" + id + "' has been deleted\"}";
+		return messageStart + id + "' has been deleted\"}";
 	}
 
 	@Transactional(REQUIRED)
 	public String updateClassroom(Long id, String classroom) {
 		deleteClassroom(id);
 		createClassroom(classroom);
-		return "{\"message\": \"Classroom with id '" + id + "' has been updated\"}";
+		return messageStart + id + "' has been updated\"}";
 	}
 	
 	public Classroom findClassroom(Long id) {
